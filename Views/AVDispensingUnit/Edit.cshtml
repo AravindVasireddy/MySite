@@ -1,0 +1,31 @@
+﻿@model AVPatients.Models.DispensingUnit
+
+@{
+    ViewData["Title"] = "Edit Dispensing Unit - AVPatients";
+}
+
+<h1>Edit Dispensing Unit</h1>
+
+<h4>DispensingUnit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DispensingCode" />
+            <div class="form-group">
+                <label asp-for="DispensingCode" class="control-label"></label>
+                <input type="text" readonly="readonly" asp-for="DispensingCode" class="form-control" />
+                <span asp-validation-for="DispensingCode" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
